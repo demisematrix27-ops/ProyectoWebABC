@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">Logo</a>
+            </div>
+
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../Index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="catalogo.html">Catálogos</a></li>
+                </ul>
+            </nav>
+
+            <form role="search" class="buscador" action="/buscar" method="get">
+                <label for="busqueda" class="visually-hidden">Buscar repuestos</label>
+                <input type="search" id="busqueda" name="q" placeholder="Encuentra tu repuesto perfecto">
+                <button type="submit" aria-label="Buscar">search-icon</button>
+            </form>
+
+            <div class="header-contact">
+                <address>
+                    <p>Teléfono: 6344-8292</p>
+                    <p>WhatsApp: 6549-7470</p>
+                </address>
+            </div>
+
+            <div class="user-actions">
+                <a href="shop.html" aria-label="Carrito de compras" class="cart-icon">
+                    <span aria-hidden="true">shop-icon</span>
+                </a>
+                <a href="account/sesion.html" aria-label="Mi cuenta" class="account-icon">
+                    <span aria-hidden="true">account-icon</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section class="shopping-cart" aria-labelledby="cart-title">
+            <h1 id="cart-title">Carrito de Compras</h1>
+
+            <form class="cart-form" action="/carrito/actualizar" method="post">
+                <table class="cart-table" role="table" aria-label="Productos en el carrito">
+                    <thead>
+                        <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Nombre de producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio unitario</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Producto 1 -->
+                        <tr class="cart-item" data-product-id="001">
+                            <td>
+                                <figure>
+                                    <img src="cable-freno-placeholder.jpg" alt="Cable de freno">
+                                </figure>
+                            </td>
+                            <td>
+                                <h3>Cable de freno</h3>
+                            </td>
+                            <td>
+                                <div class="quantity-control">
+                                    <label for="cantidad-1" class="visually-hidden">Cantidad</label>
+                                    <input type="number" id="cantidad-1" name="cantidad[001]" value="1" min="1" max="99">
+                                    <button type="button" class="remove-item" aria-label="Eliminar Cable de freno">×</button>
+                                </div>
+                            </td>
+                            <td data-label="Precio unitario">$31.66</td>
+                            <td data-label="Total" class="item-total">$31.66</td>
+                        </tr>
+
+                        <!-- Producto 2 -->
+                        <tr class="cart-item" data-product-id="002">
+                            <td>
+                                <figure>
+                                    <img src="cable-freno-placeholder.jpg" alt="Cable de freno">
+                                </figure>
+                            </td>
+                            <td>
+                                <h3>Cable de freno</h3>
+                            </td>
+                            <td>
+                                <div class="quantity-control">
+                                    <label for="cantidad-2" class="visually-hidden">Cantidad</label>
+                                    <input type="number" id="cantidad-2" name="cantidad[002]" value="1" min="1" max="99">
+                                    <button type="button" class="remove-item" aria-label="Eliminar Cable de freno">×</button>
+                                </div>
+                            </td>
+                            <td data-label="Precio unitario">$31.66</td>
+                            <td data-label="Total" class="item-total">$31.66</td>
+                        </tr>
+
+                        <!-- Producto 3 -->
+                        <tr class="cart-item" data-product-id="003">
+                            <td>
+                                <figure>
+                                    <img src="cable-freno-placeholder.jpg" alt="Cable de freno">
+                                </figure>
+                            </td>
+                            <td>
+                                <h3>Cable de freno</h3>
+                            </td>
+                            <td>
+                                <div class="quantity-control">
+                                    <label for="cantidad-3" class="visually-hidden">Cantidad</label>
+                                    <input type="number" id="cantidad-3" name="cantidad[003]" value="1" min="1" max="99">
+                                    <button type="button" class="remove-item" aria-label="Eliminar Cable de freno">×</button>
+                                </div>
+                            </td>
+                            <td data-label="Precio unitario">$31.66</td>
+                            <td data-label="Total" class="item-total">$31.66</td>
+                        </tr>
+
+                        <!-- Producto 4 -->
+                        <tr class="cart-item" data-product-id="004">
+                            <td>
+                                <figure>
+                                    <img src="cable-freno-placeholder.jpg" alt="Cable de freno">
+                                </figure>
+                            </td>
+                            <td>
+                                <h3>Cable de freno</h3>
+                            </td>
+                            <td>
+                                <div class="quantity-control">
+                                    <label for="cantidad-4" class="visually-hidden">Cantidad</label>
+                                    <input type="number" id="cantidad-4" name="cantidad[004]" value="1" min="1" max="99">
+                                    <button type="button" class="remove-item" aria-label="Eliminar Cable de freno">×</button>
+                                </div>
+                            </td>
+                            <td data-label="Precio unitario">$31.66</td>
+                            <td data-label="Total" class="item-total">$31.66</td>
+                        </tr>
+
+                        <!-- Producto 5 -->
+                        <tr class="cart-item" data-product-id="005">
+                            <td>
+                                <figure>
+                                    <img src="cable-freno-placeholder.jpg" alt="Cable de freno">
+                                </figure>
+                            </td>
+                            <td>
+                                <h3>Cable de freno</h3>
+                            </td>
+                            <td>
+                                <div class="quantity-control">
+                                    <label for="cantidad-5" class="visually-hidden">Cantidad</label>
+                                    <input type="number" id="cantidad-5" name="cantidad[005]" value="1" min="1" max="99">
+                                    <button type="button" class="remove-item" aria-label="Eliminar Cable de freno">×</button>
+                                </div>
+                            </td>
+                            <td data-label="Precio unitario">$31.66</td>
+                            <td data-label="Total" class="item-total">$31.66</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+
+            <!-- Resumen del Carrito -->
+            <aside class="cart-summary" aria-labelledby="summary-title">
+                <h2 id="summary-title">Productos</h2>
+                <ul class="summary-list">
+                    <li>
+                        <span class="product-name">Bomba de freno</span>
+                        <span class="product-price">$31.66</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Bomba de freno</span>
+                        <span class="product-price">$31.66</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Bomba de freno</span>
+                        <span class="product-price">$31.66</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Bomba de freno</span>
+                        <span class="product-price">$31.66</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Bomba de freno</span>
+                        <span class="product-price">$31.66</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Bomba de freno</span>
+                        <span class="product-price">$31.66</span>
+                    </li>
+                </ul>
+                <div class="cart-total">
+                    <strong>Total: <span id="total-amount">$189.96</span></strong>
+                </div>
+                <button type="button">
+                    <a href="pagar.html">pagar</a>
+                </button>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-columns">
+            <!-- Columna Información -->
+            <section>
+                <h3>Información</h3>
+                <nav aria-label="Información">
+                    <ul>
+                        <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="informacionPagos.html">Información de Pagos</a></li>
+                        <li><a href="informacionEntrega.html">Información de Entrega</a></li>
+                        <li><a href="devolucionGarantia.html">Devoluciones, Reclamos y Garantías</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <!-- Columna Mi Cuenta -->
+            <section>
+                <h3>Mi Cuenta</h3>
+                <nav aria-label="Mi cuenta">
+                    <ul>
+                        <li><a href="account/miCuenta.html">Cuenta</a></li>
+                        <li><a href="account/historialPedidos.html">Historial de pedidos</a></li>
+                        <li><a href="account/listaDeseos.html">Lista de Deseos</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <!-- Columna Información del Local -->
+            <section>
+                <h3>Información Del Local</h3>
+                <address>
+                    <p>La Chorrera, El Coco , Al Frente del Super99</p>
+                    <p>Tel: <a href="tel:65497470">6549-7470</a> / <a href="tel:63448292">6344-8292</a></p>
+                </address>
+                <figure>
+                    <img src="mapa-ubicacion.jpg" alt="Mapa de ubicación del local">
+                    <figcaption>Map</figcaption>
+                </figure>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p><small>Copyright © 2026 AutoServicio ABC #2</small></p>
+            <nav class="social-media" aria-label="Redes sociales">
+                <a href="https://www.instagram.com/autoserviciosabc_2/" aria-label="Instagram">Instagram-icon</a>
+                <a href="https://www.threads.com/@autoserviciosabc_2" aria-label="Threads">Threads-icon</a>
+                <a href="https://wa.me/50765497470" aria-label="WhatsApp">whatsapp-icon</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

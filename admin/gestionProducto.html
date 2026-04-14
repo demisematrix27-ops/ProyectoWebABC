@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - Admin Panel</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar de Navegación -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <!-- Placeholder para el avatar/logo -->
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar" width="60" height="60">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="active">
+                    <a href="admin.html" aria-current="page">
+                        <span aria-hidden="true">dashboard-icon</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="gestionProducto.html">
+                        <span aria-hidden="true">productmanager-icon</span>
+                        Gestión de Productos
+                    </a>
+                </li>
+                <li>
+                    <a href="gestionInventario.html">
+                        <span aria-hidden="true">inventory-icon</span>
+                        Gestión de Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="registroVentas.html">
+                        <span aria-hidden="true">ventas-icon</span>
+                        Registro de Ventas
+                    </a>
+                </li>
+                <li>
+                    <a href="clientes.html">
+                        <span aria-hidden="true">customers-icon</span>
+                        Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="proveedores.html">
+                        <span aria-hidden="true">proveedores-icon</span>
+                        Proveedores
+                    </a>
+                </li>
+                <li>
+                    <a href="reportes.html">
+                        <span aria-hidden="true">reportes-icon</span>
+                        Reportes
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span aria-hidden="true">logout-icon</span> Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Encabezado del Módulo -->
+            <header class="module-header">
+                <h1>Gestión de Productos</h1>
+                
+                <div class="header-actions">
+                    <form class="search-bar" role="search">
+                        <label for="search-products" class="visually-hidden">Buscar productos</label>
+                        <input type="text" id="search-products" placeholder="Buscar...">
+                        <button type="submit">search-icon</button>
+                    </form>
+
+                    <button type="button" class="btn-primary">
+                        + Nuevo Producto
+                    </button>
+
+                    <div class="utility-icons">
+                        <button type="button" aria-label="Notificaciones">notificacion-icon</button>
+                        <button type="button" aria-label="Cambiar tema" class="btn-icon theme-toggle">
+                            <span class="icon-sun" aria-hidden="true">sun-icon</span>
+                            <span class="icon-moon" aria-hidden="true">moon-icon</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Barra de Filtros -->
+            <section class="filters-bar" aria-label="Filtros de productos">
+                <div class="filter-group">
+                    <button type="button" aria-expanded="false">Categoría ▾</button>
+                    <button type="button" aria-expanded="false">Marca ▾</button>
+                    <button type="button" aria-expanded="false">Stock ▾</button>
+                    <button type="button" aria-expanded="false">Rango de Precios ▾</button>
+                </div>
+                <button type="button" class="btn-secondary">Limpiar Filtros</button>
+            </section>
+
+            <!-- Tabla de Datos -->
+            <section class="data-table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre del Producto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Stock Actual</th>
+                            <th scope="col">Stock Mínimo</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Fila 1 -->
+                        <tr>
+                            <td>
+                                <figure>
+                                    <img src="placeholder-product.jpg" alt="Pastillas de freno Honda Civic">
+                                </figure>
+                            </td>
+                            <td><strong>FR-458</strong></td>
+                            <td>Pastillas de freno Honda Civic</td>
+                            <td>Frenos</td>
+                            <td>Honda</td>
+                            <td>B/. 35.50</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td class="actions-cell">
+                                <button type="button" class="btn-action edit">Editar</button>
+                                <button type="button" class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <!-- Fila 2 -->
+                        <tr>
+                            <td>
+                                <figure>
+                                    <img src="placeholder-product.jpg" alt="Filtro de aceite Toyota Corolla" >
+                                </figure>
+                            </td>
+                            <td><strong>FO-312</strong></td>
+                            <td>Filtro de aceite Toyota Corolla</td>
+                            <td>Filtros</td>
+                            <td>Toyota</td>
+                            <td>B/. 18.90</td>
+                            <td>23</td>
+                            <td>20</td>
+                            <td class="actions-cell">
+                                <button type="button" class="btn-action edit">Editar</button>
+                                <button type="button" class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <!-- Fila 3 -->
+                        <tr>
+                            <td>
+                                <figure>
+                                    <img src="placeholder-product.jpg" alt="Batería 12V 60Ah" >
+                                </figure>
+                            </td>
+                            <td><strong>BT-127</strong></td>
+                            <td>Batería 12V 60Ah</td>
+                            <td>Baterías</td>
+                            <td>Genérica</td>
+                            <td>B/. 89.00</td>
+                            <td>3</td>
+                            <td>8</td>
+                            <td class="actions-cell">
+                                <button type="button" class="btn-action edit">Editar</button>
+                                <button type="button" class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <!-- Fila 4 -->
+                        <tr>
+                            <td>
+                                <figure>
+                                    <img src="placeholder-product.jpg" alt="Bombillas LED H4" >
+                                </figure>
+                            </td>
+                            <td><strong>BL-765</strong></td>
+                            <td>Bombillas LED H4</td>
+                            <td>Iluminación</td>
+                            <td>LED</td>
+                            <td>B/. 12.50</td>
+                            <td>45</td>
+                            <td>45</td>
+                            <td class="actions-cell">
+                                <button type="button" class="btn-action edit">Editar</button>
+                                <button type="button" class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <!-- Fila 5 -->
+                        <tr>
+                            <td>
+                                <figure>
+                                    <img src="placeholder-product.jpg" alt="Aceite Motor 5W-30" >
+                                </figure>
+                            </td>
+                            <td><strong>AM-221</strong></td>
+                            <td>Aceite Motor 5W-30</td>
+                            <td>Lubricantes</td>
+                            <td>Castrol</td>
+                            <td>B/. 22.00</td>
+                            <td>12</td>
+                            <td>15</td>
+                            <td class="actions-cell">
+                                <button type="button" class="btn-action edit">Editar</button>
+                                <button type="button" class="btn-action delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

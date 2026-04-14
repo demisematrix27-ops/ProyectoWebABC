@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario - Panel de Administración</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar de Johny Gutierrez">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span class="icon-placeholder">logout-icon</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Header -->
+            <header class="module-header">
+                <h1>Gestión de Inventario</h1>
+                
+                <div class="header-actions">
+                    <form class="search-bar" role="search">
+                        <label for="search-inventory" class="visually-hidden">Buscar inventario</label>
+                        <input type="text" id="search-inventory" placeholder="Buscar...">
+                    </form>
+
+                    <div class="utility-icons">
+                        <button type="button" aria-label="Notificaciones">
+                            <span class="icon-placeholder">notifications-icon</span>
+                        </button>
+                        <button type="button" aria-label="Configuración">
+                            <span class="icon-placeholder">settings-icon</span>
+                        </button>
+                        <button type="button" aria-label="Cambiar tema">
+                            <span class="icon-placeholder">theme-toggle-icon</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tabs de Navegación -->
+            <nav class="tabs-nav" aria-label="Secciones de inventario">
+                <a href="#nuevo-movimiento" class="tab active" aria-current="page">Nuevo Movimiento</a>
+                <a href="#historial-movimientos" class="tab">Historial de Movimientos</a>
+            </nav>
+
+            <!-- Sección: Registrar Nuevo Movimiento -->
+            <section class="form-section" id="nuevo-movimiento" aria-labelledby="form-title">
+                <h2 id="form-title">Registrar Nuevo Movimiento</h2>
+                
+                <form action="/admin/inventario/movimiento" method="POST">
+                    
+                    <!-- Toggle Entrada/Salida -->
+                    <div class="movement-type" role="radiogroup" aria-label="Tipo de movimiento">
+                        <label>
+                            <input type="radio" name="tipo" value="entrada" checked>
+                            Entrada
+                        </label>
+                        <label>
+                            <input type="radio" name="tipo" value="salida">
+                            Salida
+                        </label>
+                    </div>
+
+                    <!-- Selección de Producto -->
+                    <div class="form-group">
+                        <label for="producto">Seleccionar Producto</label>
+                        <select id="producto" name="producto" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="pastillas-freno" selected>Pastillas de freno</option>
+                            <option value="filtro-aceite">Filtro de aceite</option>
+                            <option value="bateria">Batería</option>
+                        </select>
+                    </div>
+
+                    <!-- Cantidad -->
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" required>
+                    </div>
+
+                    <!-- Proveedor / Motivo -->
+                    <div class="form-group">
+                        <label for="motivo">Proveedor / Motivo</label>
+                        <input 
+                            type="text" 
+                            id="motivo" 
+                            name="motivo" 
+                            placeholder="Ej: Compra a Proveedor XYZ / Venta al cliente"
+                            required
+                        >
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <!-- Botón Guardar -->
+                    <button type="submit" class="btn-primary">Guardar Movimiento</button>
+                </form>
+            </section>
+
+            <!-- Sección: Últimos Movimientos -->
+            <section class="table-section" aria-labelledby="table-title">
+                <h2 id="table-title">Últimos Movimientos de Inventario</h2>
+                
+                <table class="movements-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fecha y Hora</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre del Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Motivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023-10-26 10:30</td>
+                            <td><span class="badge entrada">Entrada</span></td>
+                            <td>PFR-123</td>
+                            <td>Pastillas de freno</td>
+                            <td>+10</td>
+                            <td>Admin</td>
+                            <td>Compra a Proveedor A</td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-26 11:00</td>
+                            <td><span class="badge salida">Salida</span></td>
+                            <td>FAO-456</td>
+                            <td>Filtro de aceite</td>
+                            <td>-2</td>
+                            <td>Vendedor1</td>
+                            <td>Venta a cliente</td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-26 11:45</td>
+                            <td><span class="badge entrada">Entrada</span></td>
+                            <td>BAT-789</td>
+                            <td>Batería</td>
+                            <td>+5</td>
+                            <td>Admin</td>
+                            <td>Compra a Proveedor B</td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-26 12:15</td>
+                            <td><span class="badge salida">Salida</span></td>
+                            <td>BJR-012</td>
+                            <td>Bujías</td>
+                            <td>-4</td>
+                            <td>Vendedor2</td>
+                            <td>Venta a cliente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

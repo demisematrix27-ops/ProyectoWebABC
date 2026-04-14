@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de productos de frenos - AutoServicio ABC #2">
+    <title>Catálogo - AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header role="banner">
+        <div class="header-top">
+            <div class="logo">
+                <a href="/" aria-label="AutoServicio ABC #2 - Inicio">
+                    <img src="logo.png" alt="AutoServicio ABC #2">
+                </a>
+            </div>
+
+            <nav role="navigation" aria-label="Navegación principal">
+                <ul class="menu-principal">
+                    <li><a href="../Index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="catalogo.html" aria-current="page">Catálogos</a></li>
+                </ul>
+            </nav>
+
+            <form role="search" class="buscador" action="/buscar" method="get">
+                <label for="busqueda" class="visually-hidden">Buscar productos</label>
+                <input 
+                    type="search" 
+                    id="busqueda" 
+                    name="q" 
+                    placeholder="Buscar... Productos de frenos"
+                    aria-label="Buscar en el catálogo"
+                >
+                <button type="submit" aria-label="Buscar">
+                    <span aria-hidden="true">search-icon</span>
+                </button>
+            </form>
+
+            <div class="acciones-usuario">
+                <a href="shop.html" class="icono-carrito" aria-label="Carrito de compras (0)">
+                    <span aria-hidden="true">shop-icon</span>
+                    <span class="contador">0</span>
+                </a>
+                <a href="account/sesion.html" class="icono-cuenta" aria-label="Mi cuenta">
+                    <span aria-hidden="true">account-icon</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main role="main" id="main-content">
+        
+        <!-- Sección de Catálogo de Productos -->
+        <section class="catalogo-productos" aria-labelledby="titulo-catalogo">
+            <header class="section-header">
+                <h1 id="titulo-catalogo">Catálogo de Productos</h1>
+                <p class="descripcion">Sistema de frenos y componentes</p>
+            </header>
+
+            <!-- Barra de Herramientas -->
+            <div class="toolbar" role="toolbar" aria-label="Herramientas del catálogo">
+                <div class="vista-opciones">
+                    <button 
+                        type="button" 
+                        class="btn-vista activa" 
+                        aria-pressed="true"
+                        aria-label="Vista de cuadrícula"
+                    >
+                        <span aria-hidden="true">⊞</span>
+                    </button>
+                    <button 
+                        type="button" 
+                        class="btn-vista" 
+                        aria-pressed="false"
+                        aria-label="Vista de lista"
+                    >
+                        <span aria-hidden="true">☰</span>
+                    </button>
+                </div>
+
+                <div class="ordenar">
+                    <label for="orden-productos">Ordenar por:</label>
+                    <select id="orden-productos" name="orden">
+                        <option value="relevancia">Relevancia</option>
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <option value="nombre">Nombre</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="productos-grid" role="list" aria-label="Lista de productos">
+                
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto1.jpg" 
+                            alt="tacos de freno delantero"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="descripcion.html">Tacos de Freno Delantero</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-001</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Tacos de Freno Delantero al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+            
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto3.jpg" 
+                            alt="Tambor de freno trasero"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Tambor de Freno Trasero</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-003</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Tambor de Freno Trasero al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto4.jpg" 
+                            alt="Bomba de freno principal"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Bomba de Freno Principal</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-004</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Bomba de Freno Principal al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto5.jpg" 
+                            alt="Líquido de frenos DOT 4"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Líquido de Frenos DOT 4</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-005</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Líquido de Frenos DOT 4 al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto6.jpg" 
+                            alt="Manguera de freno"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Manguera de Freno</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-006</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Manguera de Freno al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto7.jpg" 
+                            alt="Cilindro de rueda"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Cilindro de Rueda</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-007</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Cilindro de Rueda al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto8.jpg" 
+                            alt="Kit de reparación de frenos"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Kit de Reparación de Frenos</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-008</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Kit de Reparación de Frenos al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto9.jpg" 
+                            alt="Sensor de desgaste de pastillas"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Sensor de Desgaste de Pastillas</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-009</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Sensor de Desgaste de Pastillas al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="producto-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <figure class="producto-imagen">
+                        <img 
+                            src="producto10.jpg" 
+                            alt="Calibrador de freno"
+                            itemprop="image"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                        >
+                    </figure>
+                    <div class="producto-info">
+                        <h2 class="producto-nombre" itemprop="name">
+                            <a href="#">Calibrador de Freno</a>
+                        </h2>
+                        <p class="producto-codigo" itemprop="sku">ITEM: PROD-010</p>
+                        <div class="producto-valoracion" aria-label="Calificación: 4 de 5 estrellas">
+                            <span aria-hidden="true">★★★★</span>
+                            <span aria-hidden="true">☆</span>
+                        </div>
+                        <p class="producto-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="precio-actual" itemprop="price" content="34.00">$34.00</span>
+                            <span itemprop="priceCurrency" content="USD">USD</span>
+                        </p>
+                        <button 
+                            type="button" 
+                            class="btn-agregar-carrito"
+                            aria-label="Agregar Calibrador de Freno al carrito"
+                        >
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Paginación -->
+            <nav role="navigation" aria-label="Paginación de productos" class="paginacion">
+                <ul>
+                    <li><a href="?page=1" aria-current="page">1</a></li>
+                    <li><a href="?page=2">2</a></li>
+                    <li><a href="?page=3">3</a></li>
+                    <li><a href="?page=2" aria-label="Página siguiente">Siguiente →</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-columns">
+            <!-- Columna Información -->
+            <nav aria-label="Información de la tienda">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="informacionPagos.html">Información de Pagos</a></li>
+                    <li><a href="informacionEntrega.html">Información de Entrega</a></li>
+                    <li><a href="devolucionGarantia.html">Devoluciones, Reclamos y Garantías</a></li>
+                </ul>
+            </nav>
+
+            <!-- Columna Mi Cuenta -->
+            <nav aria-label="Cuenta de usuario">
+                <h3>Mi Cuenta</h3>
+                <ul>
+                    <li><a href="public/account/miCuenta.html">Cuenta</a></li>
+                    <li><a href="account/historialPedidos.html">Historial de pedidos</a></li>
+                    <li><a href="account/listaDeseos.html">Lista de Deseos</a></li>
+                </ul>
+            </nav>
+
+            <!-- Columna Información del Local -->
+            <div class="local-info">
+                <h3>Información Del Local</h3>
+                <address>
+                    La Chorrera, El Coco, Al Frente del Super99<br>
+                    <a href="tel:65497470">6549-7470</a> / <a href="tel:63448292">6344-8292</a>
+                </address>
+                <div class="map-placeholder">
+                    <img src="placeholder-map.png" alt="Mapa de ubicación">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+            <small>Copyright &copy; 2026 AutoServicio ABC #2</small>
+            <div class="social-icons">
+                <!-- Iconos de redes sociales (Laptop, Instagram, WhatsApp) -->
+                <a href="https://www.instagram.com/autoserviciosabc_2/" aria-label="Instagram">Instagram-icon</a>
+                <a href="https://www.threads.com/@autoserviciosabc_2" aria-label="Threads">Threads-icon</a>
+                <a href="https://wa.me/50765497470" aria-label="WhatsApp">whatsapp-icon</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

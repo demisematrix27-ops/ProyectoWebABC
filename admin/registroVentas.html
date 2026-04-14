@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ventas - Panel de Administración</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar de Johny Gutierrez">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span class="icon-placeholder">logout-icon</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Header -->
+            <header class="module-header">
+                <h1>Registro de Ventas</h1>
+                
+                <div class="header-actions">
+                    <button type="button" aria-label="Notificaciones">
+                        <span class="icon-placeholder">notifications-icon</span>
+                    </button>
+                    <button type="button" aria-label="Configuración">
+                        <span class="icon-placeholder">settings-icon</span>
+                    </button>
+                    <button type="button" aria-label="Cambiar tema">
+                        <span class="icon-placeholder">theme-toggle-icon</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="sales-container">
+                
+                <!-- Sección Principal: Nueva Venta -->
+                <section class="new-sale-section" aria-labelledby="new-sale-title">
+                    <h2 id="new-sale-title">Nueva Venta</h2>
+                    
+                    <!-- Buscador de Productos -->
+                    <form class="product-search" role="search" aria-label="Buscar productos">
+                        <label for="product-search" class="visually-hidden">Buscar producto por nombre o código</label>
+                        <input 
+                            type="search" 
+                            id="product-search" 
+                            placeholder="Buscar producto por nombre o código"
+                            aria-describedby="search-help"
+                        >
+                        <span id="search-help" class="visually-hidden">Ingrese el nombre o código del producto para agregarlo a la venta</span>
+                    </form>
+
+                    <!-- Tabla de Productos -->
+                    <div class="products-table-container">
+                        <table class="sale-products-table" aria-label="Productos de la venta actual">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">P. Unit</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">SubTotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="empty-state">
+                                    <td colspan="4">
+                                        <p>Busca y selecciona productos para agregar</p>
+                                        <button type="button" class="btn-add-product">
+                                            + Agregar otro producto
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Total y Métodos de Pago -->
+                    <div class="payment-section">
+                        <div class="total-amount">
+                            <p class="total-label">Total a pagar</p>
+                            <p class="total-value" aria-live="polite">B/. 0.00</p>
+                        </div>
+
+                        <fieldset class="payment-methods">
+                            <legend class="visually-hidden">Métodos de pago</legend>
+                            <button type="button" class="payment-btn" aria-pressed="false">
+                                Tarjeta
+                            </button>
+                            <button type="button" class="payment-btn" aria-pressed="false">
+                                Efectivo
+                            </button>
+                            <button type="button" class="payment-btn" aria-pressed="false">
+                                Yappy
+                            </button>
+                        </fieldset>
+
+                        <button type="button" class="btn-complete-sale">
+                            Completar venta
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Sidebar: Estadísticas y Ventas Recientes -->
+                <aside class="sales-sidebar" aria-label="Estadísticas y ventas recientes">
+                    
+                    <!-- Estadísticas del Día -->
+                    <section class="stats-cards" aria-label="Estadísticas de ventas">
+                        <article class="stat-card">
+                            <h3>B/. 847.50</h3>
+                            <p>Total del día</p>
+                        </article>
+                        <article class="stat-card">
+                            <h3>16</h3>
+                            <p>Ventas hoy</p>
+                        </article>
+                        <article class="stat-card">
+                            <h3>B/. 847.50</h3>
+                            <p>Promedio</p>
+                        </article>
+                    </section>
+
+                    <!-- Últimas Ventas -->
+                    <section class="recent-sales" aria-labelledby="recent-sales-title">
+                        <h2 id="recent-sales-title">Últimas ventas del día</h2>
+                        
+                        <ul class="sales-list">
+                            <li class="sale-item">
+                                <div class="sale-header">
+                                    <time datetime="2026-04-14T09:59">9:59 AM</time>
+                                    <span class="sale-status">Ahora</span>
+                                    <span class="sale-amount">B/. 57.61</span>
+                                </div>
+                                <div class="sale-products">
+                                    <p>Pastilla de freno (1) + Filtro de aceite (1)</p>
+                                </div>
+                                <div class="sale-actions">
+                                    <button type="button" class="btn-print">Imprimir</button>
+                                    <button type="button" class="btn-details">Ver detalles</button>
+                                </div>
+                            </li>
+
+                            <li class="sale-item">
+                                <div class="sale-header">
+                                    <time datetime="2026-04-14T09:59">9:59 AM</time>
+                                    <span class="sale-status">Ahora</span>
+                                    <span class="sale-amount">B/. 57.61</span>
+                                </div>
+                                <div class="sale-products">
+                                    <p>Pastilla de freno (1) + Filtro de aceite (1)</p>
+                                </div>
+                                <div class="sale-actions">
+                                    <button type="button" class="btn-print">Imprimir</button>
+                                    <button type="button" class="btn-details">Ver detalles</button>
+                                </div>
+                            </li>
+
+                            <li class="sale-item">
+                                <div class="sale-header">
+                                    <time datetime="2026-04-14T09:59">9:59 AM</time>
+                                    <span class="sale-status">Ahora</span>
+                                    <span class="sale-amount">B/. 57.61</span>
+                                </div>
+                                <div class="sale-products">
+                                    <p>Pastilla de freno (1) + Filtro de aceite (1)</p>
+                                </div>
+                                <div class="sale-actions">
+                                    <button type="button" class="btn-print">Imprimir</button>
+                                    <button type="button" class="btn-details">Ver detalles</button>
+                                </div>
+                            </li>
+
+                            <li class="sale-item">
+                                <div class="sale-header">
+                                    <time datetime="2026-04-14T09:59">9:59 AM</time>
+                                    <span class="sale-status">Ahora</span>
+                                    <span class="sale-amount">B/. 57.61</span>
+                                </div>
+                                <div class="sale-products">
+                                    <p>Pastilla de freno (1) + Filtro de aceite (1)</p>
+                                </div>
+                                <div class="sale-actions">
+                                    <button type="button" class="btn-print">Imprimir</button>
+                                    <button type="button" class="btn-details">Ver detalles</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </aside>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

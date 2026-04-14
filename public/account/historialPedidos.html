@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+
+            <nav aria-label="Menú principal">
+                <ul>
+                    <li><a href="../../Index.html">Inicio</a></li>
+                    <li><a href="../servicios.html">Servicios</a></li>
+                    <li><a href="../catalogo.html">Catálogos</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <form role="search" action="/buscar" method="get">
+                    <label for="busqueda" class="visually-hidden">Buscar repuestos</label>
+                    <input type="search" id="busqueda" name="q" placeholder="Encuentra tu repuesto perfecto">
+                    <button type="submit">search-icon</button>
+                </form>
+            </div>
+
+            <div class="header-contact-icons">
+                <div class="contact-info">
+                    <p>Teléfono<br>6344-8292</p>
+                    <p>Whats app<br>6549-7470</p>
+                </div>
+                <div class="user-actions">
+                    <a href="../shop.html" aria-label="Carrito de compras">shop-icon</a>
+                    <a href="miCuenta.html" aria-label="Perfil de usuario">account-icon</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <div class="dashboard-layout">
+            
+            <!-- Barra Lateral Izquierda (Menú de Cuenta) -->
+            <aside class="sidebar-left">
+                <nav aria-label="Menú de cuenta de usuario">
+                    <ul>
+                        <li><a href="historialPedidos.html">Historial de pedidos</a></li>
+                        <li><a href="pedidosRecientes.html">Historial de compras</a></li>
+                        <li><a href="modificarInformacion.html">Modificar información</a></li>
+                        <li><a href="modificarContrasena.html">Cambiar contraseña</a></li>
+                        <li><a href="listaDeseos.html">Lista de deseos</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <!-- Área de Contenido Central (Dinámico) -->
+                <!-- Aquí se cargaría el contenido dinámico según la selección del menú -->
+            <!-- Contenido Central - Historial de Pedidos -->
+            <section class="account-content" aria-labelledby="orders-history-title">
+                <h2 id="orders-history-title">Historial de Pedidos</h2>
+                
+                <!-- Filtro de Fechas -->
+                <div class="date-filter" role="search" aria-label="Filtrar pedidos por fecha">
+                    <label for="filter-start">Filtrar desde</label>
+                    <input 
+                        type="date" 
+                        id="filter-start" 
+                        name="start_date"
+                        aria-label="Fecha de inicio"
+                    >
+                    
+                    <label for="filter-end" class="visually-hidden">hasta</label>
+                    <input 
+                        type="date" 
+                        id="filter-end" 
+                        name="end_date"
+                        aria-label="Fecha de fin"
+                    >
+                    
+                    <button type="submit" form="orders-filter-form" class="btn-filter">
+                        Filtrar
+                    </button>
+                    
+                    <button type="button" class="btn-clear">
+                        Limpiar
+                    </button>
+                </div>
+
+                <!-- Tabla de Historial de Pedidos -->
+                <div class="table-container">
+                    <table class="orders-history-table" role="table" aria-label="Historial de pedidos realizados">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Pedido 1 -->
+                            <tr>
+                                <td>
+                                    <span>
+                                        Pastillas de freno Honda Civic
+                                    </span>
+                                </td>
+                                <td>2</td>
+                                <td>B/. 70.00</td>
+                                <td>
+                                    <time datetime="2026-04-10">10 de abril, 2026</time>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 2 -->
+                            <tr>
+                                <td>
+                                    <span>
+                                        Filtro de aceite Toyota Corolla
+                                    </span>
+                                </td>
+                                <td>1</td>
+                                <td>B/. 18.90</td>
+                                <td>
+                                    <time datetime="2026-04-08">8 de abril, 2026</time>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 3 -->
+                            <tr>
+                                <td>
+                                    <span>
+                                        Batería 12V 60Ah
+                                    </span>
+                                </td>
+                                <td>1</td>
+                                <td>B/. 89.00</td>
+                                <td>
+                                    <time datetime="2026-04-05">5 de abril, 2026</time>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 4 -->
+                            <tr>
+                                <td>
+                                    <span>
+                                        Aceite Motor 5W-30
+                                    </span>
+                                </td>
+                                <td>3</td>
+                                <td>B/. 66.00</td>
+                                <td>
+                                    <time datetime="2026-04-01">1 de abril, 2026</time>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 5 -->
+                            <tr>
+                                <td>
+                                    <span>
+                                        Bombillas LED H4
+                                    </span>
+                                </td>
+                                <td>2</td>
+                                <td>B/. 25.00</td>
+                                <td>
+                                    <time datetime="2026-03-28">28 de marzo, 2026</time>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Mensaje si no hay pedidos (opcional, para cuando el filtro no retorne resultados) -->
+                <div class="no-orders-message" role="status" hidden>
+                    <p>No se encontraron pedidos en el rango de fechas seleccionado.</p>
+                </div>
+
+                <!-- Paginación (opcional) -->
+                <!-- <nav class="pagination" aria-label="Paginación de pedidos">
+                    <ul>
+                        <li><a href="?page=1" aria-current="page">1</a></li>
+                        <li><a href="?page=2">2</a></li>
+                        <li><a href="?page=3">3</a></li>
+                        <li><a href="?page=2" aria-label="Página siguiente">Siguiente →</a></li>
+                    </ul>
+                </nav> -->
+            </section>
+            <!-- Barra Lateral Derecha (Widget/Novedades) -->
+            <aside class="sidebar-right">
+                <div class="product-widget">
+                    <h2>Algun producto en novedad</h2>
+                    <!-- Espacio para imagen o detalle del producto -->
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-columns">
+            
+            <!-- Columna Información -->
+            <section>
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="../sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="../informacionPagos.html">Información de Pagos</a></li>
+                    <li><a href="../informacionEntrega.html">Información de Entrega</a></li>
+                    <li><a href="../devolucionGarantia.html">Devoluciones, Reclamos y Garantías</a></li>
+                </ul>
+            </section>
+
+            <!-- Columna Mi Cuenta -->
+            <section>
+                <h3>Mi Cuenta</h3>
+                <ul>
+                    <li><a href="miCuenta.html">Cuenta</a></li>
+                    <li><a href="historialPedidos.html">Historial de pedidos</a></li>
+                    <li><a href="listaDeseos.html">Lista de Deseos</a></li>
+                </ul>
+            </section>
+
+            <!-- Columna Información del Local -->
+            <section>
+                <h3>Información Del Local</h3>
+                <address>
+                    La Chorrera, El Coco , Al<br>
+                    Frente del Super99<br>
+                    <a href="tel:65497470">6549-7470</a> / <a href="tel:63448292">6344-8292</a>
+                </address>
+                <figure>
+                    <img src="mapa-placeholder.jpg" alt="Mapa de ubicación del local">
+                    <figcaption>Map</figcaption>
+                </figure>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 AutoServicio ABC #2</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/autoserviciosabc_2/" aria-label="Instagram">Instagram-icon</a>
+                <a href="https://www.threads.com/@autoserviciosabc_2" aria-label="Threads">Threads-icon</a>
+                <a href="https://wa.me/50765497470" aria-label="WhatsApp">whatsapp-icon</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

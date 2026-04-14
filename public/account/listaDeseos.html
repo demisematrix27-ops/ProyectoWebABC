@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+
+            <nav aria-label="Menú principal">
+                <ul>
+                    <li><a href="../../Index.html">Inicio</a></li>
+                    <li><a href="../servicios.html">Servicios</a></li>
+                    <li><a href="../catalogo.html">Catálogos</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <form role="search" action="/buscar" method="get">
+                    <label for="busqueda" class="visually-hidden">Buscar repuestos</label>
+                    <input type="search" id="busqueda" name="q" placeholder="Encuentra tu repuesto perfecto">
+                    <button type="submit">search-icon</button>
+                </form>
+            </div>
+
+            <div class="header-contact-icons">
+                <div class="contact-info">
+                    <p>Teléfono<br>6344-8292</p>
+                    <p>Whats app<br>6549-7470</p>
+                </div>
+                <div class="user-actions">
+                    <a href="../shop.html" aria-label="Carrito de compras">shop-icon</a>
+                    <a href="miCuenta.html" aria-label="Perfil de usuario">account-icon</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <div class="dashboard-layout">
+            
+            <!-- Barra Lateral Izquierda (Menú de Cuenta) -->
+            <aside class="sidebar-left">
+                <nav aria-label="Menú de cuenta de usuario">
+                    <ul>
+                        <li><a href="historialPedidos.html">Historial de pedidos</a></li>
+                        <li><a href="pedidosRecientes.html">Historial de compras</a></li>
+                        <li><a href="modificarInformacion.html">Modificar información</a></li>
+                        <li><a href="modificarContrasena.html">Cambiar contraseña</a></li>
+                        <li><a href="listaDeseos.html">Lista de deseos</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Área de Contenido Central (Dinámico) -->
+            <!-- Contenido Central - Lista de Deseos -->
+            <section class="account-content" aria-labelledby="wishlist-title">
+                <h2 id="wishlist-title">Lista de deseos</h2>
+
+                <!-- Tabla de Productos en Lista de Deseos -->
+                <div class="table-container">
+                    <table class="wishlist-table" role="table" aria-label="Productos en tu lista de deseos">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Disponibilidad</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Producto 1 -->
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <a href="/producto/pastillas-freno-honda">
+                                            <img src="pastillas-freno.jpg" alt="Pastillas de freno Honda Civic" width="60" height="60" loading="lazy">
+                                        </a>
+                                        <div class="product-details">
+                                            <a href="/producto/pastillas-freno-honda">
+                                                <h3>Pastillas de freno Honda Civic</h3>
+                                            </a>
+                                            <p class="product-code">Código: FR-458</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="product-price">B/. 35.50</td>
+                                <td>
+                                    <span class="stock-status in-stock">Disponible</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="/catalogo.html?producto=FR-458" class="btn-secondary btn-sm">
+                                            Ver detalles
+                                        </a>
+                                        <form action="/mi-cuenta/lista-deseos/eliminar" method="POST" class="inline-form">
+                                            <input type="hidden" name="producto_id" value="FR-458">
+                                            <button type="submit" class="btn-danger btn-sm" aria-label="Eliminar Pastillas de freno Honda Civic de la lista">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Producto 2 -->
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <a href="/producto/filtro-aceite-toyota">
+                                            <img src="filtro-aceite.jpg" alt="Filtro de aceite Toyota Corolla" width="60" height="60" loading="lazy">
+                                        </a>
+                                        <div class="product-details">
+                                            <a href="/producto/filtro-aceite-toyota">
+                                                <h3>Filtro de aceite Toyota Corolla</h3>
+                                            </a>
+                                            <p class="product-code">Código: FO-312</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="product-price">B/. 18.90</td>
+                                <td>
+                                    <span class="stock-status in-stock">Disponible</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="/catalogo.html?producto=FO-312" class="btn-secondary btn-sm">
+                                            Ver detalles
+                                        </a>
+                                        <form action="/mi-cuenta/lista-deseos/eliminar" method="POST" class="inline-form">
+                                            <input type="hidden" name="producto_id" value="FO-312">
+                                            <button type="submit" class="btn-danger btn-sm" aria-label="Eliminar Filtro de aceite Toyota Corolla de la lista">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Producto 3 -->
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <a href="/producto/bateria-12v">
+                                            <img src="bateria-12v.jpg" alt="Batería 12V 60Ah" width="60" height="60" loading="lazy">
+                                        </a>
+                                        <div class="product-details">
+                                            <a href="/producto/bateria-12v">
+                                                <h3>Batería 12V 60Ah</h3>
+                                            </a>
+                                            <p class="product-code">Código: BT-127</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="product-price">B/. 89.00</td>
+                                <td>
+                                    <span class="stock-status low-stock">Stock bajo</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="/catalogo.html?producto=BT-127" class="btn-secondary btn-sm">
+                                            Ver detalles
+                                        </a>
+                                        <form action="/mi-cuenta/lista-deseos/eliminar" method="POST" class="inline-form">
+                                            <input type="hidden" name="producto_id" value="BT-127">
+                                            <button type="submit" class="btn-danger btn-sm" aria-label="Eliminar Batería 12V 60Ah de la lista">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Producto 4 -->
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <a href="/producto/aceite-motor">
+                                            <img src="aceite-motor.jpg" alt="Aceite Motor 5W-30" width="60" height="60" loading="lazy">
+                                        </a>
+                                        <div class="product-details">
+                                            <a href="/producto/aceite-motor">
+                                                <h3>Aceite Motor 5W-30</h3>
+                                            </a>
+                                            <p class="product-code">Código: AM-221</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="product-price">B/. 22.00</td>
+                                <td>
+                                    <span class="stock-status in-stock">Disponible</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="/catalogo.html?producto=AM-221" class="btn-secondary btn-sm">
+                                            Ver detalles
+                                        </a>
+                                        <form action="/mi-cuenta/lista-deseos/eliminar" method="POST" class="inline-form">
+                                            <input type="hidden" name="producto_id" value="AM-221">
+                                            <button type="submit" class="btn-danger btn-sm" aria-label="Eliminar Aceite Motor 5W-30 de la lista">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Mensaje si la lista está vacía -->
+                <div class="wishlist-empty" role="status" hidden>
+                    <p>No tienes productos en tu lista de deseos.</p>
+                </div>
+
+                <!-- Botón para añadir más productos -->
+                <div class="wishlist-actions">
+                    <a href="../catalogo.html" class="btn-primary btn-large">
+                        + Añadir otra pieza
+                    </a>
+                </div>
+
+                <!-- Resumen de la lista -->
+                <aside class="wishlist-summary" aria-label="Resumen de lista de deseos">
+                    <h3>Resumen</h3>
+                    <dl>
+                        <div class="summary-item">
+                            <dt>Total de productos:</dt>
+                            <dd>4</dd>
+                        </div>
+                        <div class="summary-item">
+                            <dt>Valor total estimado:</dt>
+                            <dd>B/. 165.40</dd>
+                        </div>
+                    </dl>
+                </aside>
+
+            </section>
+
+            <!-- Barra Lateral Derecha (Widget/Novedades) -->
+            <aside class="sidebar-right">
+                <div class="product-widget">
+                    <h2>Algun producto en novedad</h2>
+                    <!-- Espacio para imagen o detalle del producto -->
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-columns">
+            
+            <!-- Columna Información -->
+            <section>
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="../sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="../informacionPagos.html">Información de Pagos</a></li>
+                    <li><a href="../informacionEntrega.html">Información de Entrega</a></li>
+                    <li><a href="../devolucionGarantia.html">Devoluciones, Reclamos y Garantías</a></li>
+                </ul>
+            </section>
+
+            <!-- Columna Mi Cuenta -->
+            <section>
+                <h3>Mi Cuenta</h3>
+                <ul>
+                    <li><a href="miCuenta.html">Cuenta</a></li>
+                    <li><a href="historialPedidos.html">Historial de pedidos</a></li>
+                    <li><a href="listaDeseos.html">Lista de Deseos</a></li>
+                </ul>
+            </section>
+
+            <!-- Columna Información del Local -->
+            <section>
+                <h3>Información Del Local</h3>
+                <address>
+                    La Chorrera, El Coco , Al<br>
+                    Frente del Super99<br>
+                    <a href="tel:65497470">6549-7470</a> / <a href="tel:63448292">6344-8292</a>
+                </address>
+                <figure>
+                    <img src="mapa-placeholder.jpg" alt="Mapa de ubicación del local" width="150">
+                    <figcaption>Map</figcaption>
+                </figure>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 AutoServicio ABC #2</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/autoserviciosabc_2/" aria-label="Instagram">Instagram-icon</a>
+                <a href="https://www.threads.com/@autoserviciosabc_2" aria-label="Threads">Threads-icon</a>
+                <a href="https://wa.me/50765497470" aria-label="WhatsApp">whatsapp-icon</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

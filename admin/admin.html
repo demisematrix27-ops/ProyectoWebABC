@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Panel de Administración | AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Contenedor Principal del Dashboard -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar de Navegación -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <div class="admin-profile">
+                    <img src="avatar.jpg" alt="Foto de perfil de Johny Gutierrez" width="50" height="50">
+                    <div class="admin-info">
+                        <h2>Johny Gutierrez</h2>
+                        <p>Administrador</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html" class="logout-btn">
+                    <span aria-hidden="true">logout-icon</span>
+                    Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            
+            <!-- Header del Dashboard -->
+            <header class="dashboard-header">
+                <h1>¡Bienvenido, Admin!</h1>
+                <div class="header-actions">
+                    <!-- Botón de Notificaciones -->
+                    <button type="button" aria-label="Notificaciones" class="btn-icon">
+                        <span aria-hidden="true">notificacion-icon</span>
+                    </button>
+                    
+                    <!-- Botón Toggle de Tema (Sol y Luna) -->
+                    <button type="button" aria-label="Cambiar tema" class="btn-icon theme-toggle">
+                        <span class="icon-sun" aria-hidden="true">sun-icon</span>
+                        <span class="icon-moon" aria-hidden="true">moon-icon</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Área Principal del Dashboard -->
+            <main class="dashboard-main">
+                
+                <!-- Tarjetas de Estadísticas -->
+                <section class="stats-cards" aria-label="Estadísticas principales">
+                    <article class="stat-card">
+                        <div class="stat-icon">
+                            <span aria-hidden="true">money-icon</span>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Ventas Hoy</h3>
+                            <p class="stat-value">B/. 1,245.50</p>
+                            <span class="stat-change positive">+18%</span>
+                        </div>
+                    </article>
+
+                    <article class="stat-card alert">
+                        <div class="stat-icon">
+                            <span aria-hidden="true">Icon-ventas</span>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Productos</h3>
+                            <p class="stat-value">12 productos</p>
+                            <span class="stat-warning">Stock Bajo</span>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon">
+                            <span aria-hidden="true">Stock-icon</span>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total de Productos</h3>
+                            <p class="stat-value">1,847</p>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon">
+                            <span aria-hidden="true">productos-icon</span>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Ventas del Mes</h3>
+                            <p class="stat-value">B/. 28,450</p>
+                            <span class="stat-change positive">+12%</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Gráficos y Visualizaciones -->
+                <section class="charts-section" aria-label="Gráficos y distribuciones">
+                    <article class="chart-card">
+                        <h2>Distribución de Inventario</h2>
+                        <figure class="chart-placeholder">
+                            <img src="chart-inventario.jpg" alt="Gráfico de distribución de inventario por categorías">
+                        </figure>
+                    </article>
+
+                    <article class="chart-card">
+                        <h2>Ventas de los Últimos 7 Días</h2>
+                        <figure class="chart-placeholder">
+                            <img src="chart-ventas.jpg" alt="Gráfico de línea mostrando ventas de los últimos 7 días">
+                        </figure>
+                    </article>
+                </section>
+
+                <!-- Tablas de Información -->
+                <section class="tables-section" aria-label="Información detallada">
+                    
+                    <!-- Productos con Stock Crítico -->
+                    <article class="table-card">
+                        <h2>Productos con Stock Crítico</h2>
+                        <table class="data-table" role="table" aria-label="Productos con stock crítico">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Stock Actual</th>
+                                    <th scope="col">Stock Mínimo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Filtro de Aceite</td>
+                                    <td>FA-123</td>
+                                    <td class="stock-low">8</td>
+                                    <td>10</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Pastillas de Freno</td>
+                                    <td>PF-456</td>
+                                    <td class="stock-low">5</td>
+                                    <td>15</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <!-- Últimas Ventas -->
+                    <article class="table-card">
+                        <h2>Últimas Ventas</h2>
+                        <table class="data-table" role="table" aria-label="Últimas ventas realizadas">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Hora</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10:30 AM</td>
+                                    <td>Filtro de Aire</td>
+                                    <td>B/. 25.00</td>
+                                </tr>
+                                <tr>
+                                    <td>09:45 AM</td>
+                                    <td>Batería</td>
+                                    <td>B/. 120.00</td>
+                                </tr>
+                                <tr>
+                                    <td>09:15 AM</td>
+                                    <td>Aceite Motor</td>
+                                    <td>B/. 45.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                </section>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

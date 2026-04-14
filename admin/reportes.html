@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes e Indicadores - Panel de Administración</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar de Navegación -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar de Johny Gutierrez">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span class="icon-placeholder">logout-icon</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Header del Módulo -->
+            <header class="module-header">
+                <h1>Reportes e Indicadores</h1>
+                
+                <div class="header-actions">
+                    <button type="button" aria-label="Notificaciones">
+                        <span class="icon-placeholder">notifications-icon</span>
+                    </button>
+                    <button type="button" aria-label="Configuración">
+                        <span class="icon-placeholder">settings-icon</span>
+                    </button>
+                    <button type="button" aria-label="Cambiar tema">
+                        <span class="icon-placeholder">theme-toggle-icon</span>
+                    </button>
+                    
+                    <label for="time-range">
+                        <select id="time-range" name="time-range" aria-label="Rango de tiempo">
+                            <option value="6m" selected>Últimos 6 meses</option>
+                            <option value="1y">Último año</option>
+                            <option value="3m">Últimos 3 meses</option>
+                            <option value="all">Todo el historial</option>
+                        </select>
+                    </label>
+                </div>
+            </header>
+
+            <!-- KPIs - Indicadores Clave -->
+            <section class="kpi-grid" aria-label="Indicadores clave de rendimiento">
+                
+                <article class="kpi-card">
+                    <h2>Ventas totales</h2>
+                    <p class="kpi-value">B/. 48,250</p>
+                    <span class="kpi-icon">money-icon</span>
+                    <span class="kpi-trend positive">↑ +12.3%</span>
+                </article>
+
+                <article class="kpi-card">
+                    <h2>Órdenes de compra</h2>
+                    <p class="kpi-value">142</p>
+                    <span class="kpi-icon">cart-icon</span>
+                    <span class="kpi-trend positive">↑ +5.1%</span>
+                </article>
+
+                <article class="kpi-card">
+                    <h2>Valor de inventario</h2>
+                    <p class="kpi-value">B/. 32,800</p>
+                    <span class="kpi-icon">warehouse-icon</span>
+                    <span class="kpi-trend negative">↓ -2.4%</span>
+                </article>
+
+                <article class="kpi-card">
+                    <h2>Proveedores activos</h2>
+                    <p class="kpi-value">24</p>
+                    <span class="kpi-icon">truck-icon</span>
+                    <span class="kpi-trend positive">+2 nuevos</span>
+                </article>
+
+            </section>
+
+            <!-- Sección de Gráficos -->
+            <section class="charts-section" aria-label="Gráficos de análisis">
+                
+                <!-- Gráfico de Ventas Mensuales -->
+                <figure class="chart-container">
+                    <h3>Ventas mensuales</h3>
+                    <div class="chart-placeholder" role="img" aria-label="Gráfico de barras mostrando ventas mensuales de enero a junio">
+                        <img src="chart-ventas-mensuales.jpg" alt="Gráfico de barras: Enero $3000, Febrero $5000, Marzo $6500, Abril $7500, Mayo $8000, Junio $9500">
+                        <figcaption>Comparativa de ventas por mes (Enero - Junio)</figcaption>
+                    </div>
+                </figure>
+
+                <!-- Gráfico de Ventas por Categoría -->
+                <figure class="chart-container">
+                    <h3>Ventas por categoría</h3>
+                    <div class="chart-placeholder" role="img" aria-label="Gráfico de dona mostrando distribución de ventas por categoría">
+                        <img src="chart-ventas-categoria.jpg" alt="Gráfico de dona: Filtro aceite 35%, Frenos 25%, Carburador 20%, Aceite Castrol 20%">
+                        <figcaption>Distribución de ventas por categoría de producto</figcaption>
+                    </div>
+                    <ul class="chart-legend">
+                        <li><span class="legend-color" style="background-color: #333;"></span> Filtro aceite</li>
+                        <li><span class="legend-color" style="background-color: #666;"></span> Frenos</li>
+                        <li><span class="legend-color" style="background-color: #999;"></span> Carburador</li>
+                        <li><span class="legend-color" style="background-color: #ccc;"></span> Aceite Castrol</li>
+                    </ul>
+                </figure>
+
+            </section>
+
+            <!-- Sección de Tablas de Reportes -->
+            <section class="tables-section" aria-label="Tablas de reportes detallados">
+                
+                <!-- 5 Productos Más Vendidos -->
+                <article class="table-card">
+                    <h3>5 productos mas vendidos</h3>
+                    <table class="data-table" role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Unidades</th>
+                                <th scope="col">Ingreso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aceite 20W50</td>
+                                <td>Lubricantes</td>
+                                <td>342</td>
+                                <td>B/. 4,104</td>
+                            </tr>
+                            <tr>
+                                <td>Aceite 20W50</td>
+                                <td>Lubricantes</td>
+                                <td>342</td>
+                                <td>B/. 4,104</td>
+                            </tr>
+                            <tr>
+                                <td>Aceite 20W50</td>
+                                <td>Lubricantes</td>
+                                <td>342</td>
+                                <td>B/. 4,104</td>
+                            </tr>
+                            <tr>
+                                <td>Aceite 20W50</td>
+                                <td>Lubricantes</td>
+                                <td>342</td>
+                                <td>B/. 4,104</td>
+                            </tr>
+                            <tr>
+                                <td>Aceite 20W50</td>
+                                <td>Lubricantes</td>
+                                <td>342</td>
+                                <td>B/. 4,104</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <!-- Compras por Proveedor -->
+                <article class="table-card">
+                    <h3>Compras por proveedor (ultimo trimestre)</h3>
+                    <table class="data-table" role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Proveedor</th>
+                                <th scope="col">Total Comprado</th>
+                                <th scope="col">%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Frenos del Norte</td>
+                                <td>B/. 8,440</td>
+                                <td>28%</td>
+                            </tr>
+                            <tr>
+                                <td>AutoPartes Universal</td>
+                                <td>B/. 8,440</td>
+                                <td>21%</td>
+                            </tr>
+                            <tr>
+                                <td>Lubricantes Premium</td>
+                                <td>B/. 8,440</td>
+                                <td>17%</td>
+                            </tr>
+                            <tr>
+                                <td>Baterías Energio</td>
+                                <td>B/. 8,440</td>
+                                <td>16%</td>
+                            </tr>
+                            <tr>
+                                <td>Filtros Express</td>
+                                <td>B/. 8,440</td>
+                                <td>11%</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    <small>Total compras: B/. 29,850</small>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

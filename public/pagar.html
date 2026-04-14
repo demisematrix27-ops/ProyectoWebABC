@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">Logo</a>
+            </div>
+
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../Index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="catalogo.html">Catálogos</a></li>
+                </ul>
+            </nav>
+
+            <form role="search" class="buscador" action="/buscar" method="get">
+                <label for="busqueda" class="visually-hidden">Buscar repuestos</label>
+                <input type="search" id="busqueda" name="q" placeholder="Encuentra tu repuesto perfecto">
+                <button type="submit" aria-label="Buscar">search-icon</button>
+            </form>
+
+            <div class="header-contact">
+                <address>
+                    <p>Teléfono: 6344-8292</p>
+                    <p>WhatsApp: 6549-7470</p>
+                </address>
+            </div>
+
+            <div class="user-actions">
+                <a href="shop.html" aria-label="Carrito de compras" class="cart-icon">
+                    <span aria-hidden="true">shop-icon</span>
+                </a>
+                <a href="account/sesion.html" aria-label="Mi cuenta" class="account-icon">
+                    <span aria-hidden="true">account-icon</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        
+        <!-- Sección del Formulario de Compra -->
+        <section class="checkout-form">
+            <form action="/procesar-pago" method="post">
+                
+                <!-- 1. Información de Contacto -->
+                <fieldset>
+                    <legend>1. Información de contacto</legend>
+                    <div>
+                        <label for="nombres">Nombres</label>
+                        <input type="text" id="nombres" name="nombres" required>
+                    </div>
+                    <div>
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                    </div>
+                    <div>
+                        <label for="cedula">Cédula</label>
+                        <input type="text" id="cedula" name="cedula" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div>
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+                </fieldset>
+
+                <!-- 2. Método de Entrega -->
+                <fieldset>
+                    <legend>2. Método de entrega</legend>
+                    <select name="metodo-entrega" id="metodo-entrega">
+                        <option value="tienda">Tienda</option>
+                    </select>
+                    
+                    <div>
+                        <label for="fecha-entrega">Fecha de entrega</label>
+                        <input type="date" id="fecha-entrega" name="fecha-entrega" required>
+                    </div>
+                    <div>
+                        <label for="hora-entrega">Hora conveniente</label>
+                        <input type="time" id="hora-entrega" name="hora-entrega" required>
+                    </div>
+                </fieldset>
+
+                <!-- 3. Método de Pago -->
+                <fieldset>
+                    <legend>3. Método de pago</legend>
+                    <div>
+                        <input type="radio" id="visa" name="pago" value="visa">
+                        <label for="visa">Visa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mastercard" name="pago" value="mastercard">
+                        <label for="mastercard">Mastercard</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="happy" name="pago" value="happy">
+                        <label for="happy">Happy</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="efectivo" name="pago" value="efectivo">
+                        <label for="efectivo">Efectivo</label>
+                    </div>
+                </fieldset>
+
+            </form>
+        </section>
+
+        <!-- Resumen del Pedido (Orden) -->
+        <aside class="order-summary">
+            <h2>Orden</h2>
+            <ul>
+                <li>
+                    <span>Cable de freno</span>
+                    <span>$31.66</span>
+                </li>
+                <li>
+                    <span>Cable de freno</span>
+                    <span>$31.66</span>
+                </li>
+                <li>
+                    <span>Cable de freno</span>
+                    <span>$31.66</span>
+                </li>
+                <li>
+                    <span>Cable de freno</span>
+                    <span>$31.66</span>
+                </li>
+            </ul>
+            <div class="total">
+                <strong>Total</strong>
+                <span>$126.64</span>
+            </div>
+        </aside>
+
+        <!-- Ejemplo de datos para Mastercard (Modal/Formulario oculto) -->
+        <section class="payment-details-example" id="mastercard-example">
+            <h2>Mastercard example data</h2>
+            <form>
+                <div>
+                    <label for="card-number">Número de tarjeta</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="**** **** **** ****">
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                </div>
+                <div>
+                    <label for="expiry">Fecha de Expiración</label>
+                    <input type="month" id="expiry" name="expiry">
+                </div>
+                <div>
+                    <label for="card-name">Nombre de la tarjeta</label>
+                    <input type="text" id="card-name" name="card-name" placeholder="Titular de la tarjeta">
+                </div>
+                <button type="submit" form="checkout-form">Pagar</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-links">
+            <div>
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="informacionPagos.html">Información de Pagos</a></li>
+                    <li><a href="informacionEntrega.html">Información de Entrega</a></li>
+                    <li><a href="devolucionGarantia.html">Devoluciones, Reclamos y Garantías</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Mi Cuenta</h3>
+                <ul>
+                    <li><a href="account/miCuenta.html">Cuenta</a></li>
+                    <li><a href="account/historialPedidos.html">Historial de pedidos</a></li>
+                    <li><a href="account/listaDeseos.html">Lista de Deseos</a></li>
+                </ul>
+            </div>
+            <!-- Columna Información del Local -->
+            <section>
+                <h3>Información Del Local</h3>
+                <address>
+                    <p>La Chorrera, El Coco , Al Frente del Super99</p>
+                    <p>Tel: <a href="tel:65497470">6549-7470</a> / <a href="tel:63448292">6344-8292</a></p>
+                </address>
+                <figure>
+                    <img src="mapa-ubicacion.jpg" alt="Mapa de ubicación del local">
+                    <figcaption>Map</figcaption>
+                </figure>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p><small>Copyright © 2026 AutoServicio ABC #2</small></p>
+            <nav class="social-media" aria-label="Redes sociales">
+                <a href="https://www.instagram.com/autoserviciosabc_2/" aria-label="Instagram">Instagram-icon</a>
+                <a href="https://www.threads.com/@autoserviciosabc_2" aria-label="Threads">Threads-icon</a>
+                <a href="https://wa.me/50765497470" aria-label="WhatsApp">whatsapp-icon</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos para Retiro - Panel de Administración</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar de Johny Gutierrez">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span class="icon-placeholder">logout-icon</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Header -->
+            <header class="module-header">
+                <h1>Pedidos para Retiro</h1>
+                
+                <div class="header-actions">
+                    <button type="button" aria-label="Notificaciones">
+                        <span class="icon-placeholder">notifications-icon</span>
+                    </button>
+                    <button type="button" aria-label="Configuración">
+                        <span class="icon-placeholder">settings-icon</span>
+                    </button>
+                    <button type="button" aria-label="Cambiar tema">
+                        <span class="icon-placeholder">theme-toggle-icon</span>
+                    </button>
+                    
+                    <a href="clientes.html" class="btn-secondary">
+                        ← Volver a Clientes
+                    </a>
+                </div>
+            </header>
+
+            <!-- Estadísticas -->
+            <section class="stats-cards" aria-label="Estadísticas de pedidos">
+                <article class="stat-card">
+                    <h2>Total Pedidos Pendientes</h2>
+                    <p class="stat-value">7</p>
+                    <span class="stat-label">Listos para entregar</span>
+                </article>
+                <article class="stat-card">
+                    <h2>Pedidos Hoy</h2>
+                    <p class="stat-value">12</p>
+                    <span class="stat-label">Registrados hoy</span>
+                </article>
+            </section>
+
+            <!-- Filtros y Búsqueda -->
+            <section class="filters-section" aria-label="Filtros de pedidos">
+                <form class="filters-form" role="search" method="get" action="">
+                    <div class="filter-group">
+                        <label for="search-order">Buscar pedido</label>
+                        <input 
+                            type="search" 
+                            id="search-order" 
+                            name="q" 
+                            placeholder="N° de pedido, cliente o teléfono"
+                        >
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-date">Filtrar por fecha</label>
+                        <input type="date" id="filter-date" name="fecha">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-status">Estado</label>
+                        <select id="filter-status" name="estado">
+                            <option value="todos">Todos los estados</option>
+                            <option value="pendiente" selected>Pendiente de retiro</option>
+                            <option value="proceso">En proceso</option>
+                            <option value="entregado">Entregado</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-filter">Filtrar</button>
+                    <a href="pedidos-retiro.html" class="btn-clear">Limpiar filtros</a>
+                </form>
+            </section>
+
+            <!-- Tabla de Pedidos para Retiro -->
+            <section aria-labelledby="orders-title">
+                <h2 id="orders-title" class="visually-hidden">Lista de pedidos pendientes de retiro</h2>
+                
+                <div class="table-responsive">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">N° Pedido</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Fecha del pedido</th>
+                                <th scope="col">Productos</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Pedido 1 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1001</strong>
+                                </td>
+                                <td>María González</td>
+                                <td>6678-1234</td>
+                                <td>
+                                    <time datetime="2025-04-01">2025-04-01</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Filtro Aceite (1)</li>
+                                        <li>Bujía NGK (2)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 46.90</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1001">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1001 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 2 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1023</strong>
+                                </td>
+                                <td>Carlos Rodríguez</td>
+                                <td>6234-5678</td>
+                                <td>
+                                    <time datetime="2025-04-02">2025-04-02</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Pastillas de freno (1)</li>
+                                        <li>Aceite Motor 5W30 (2)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 63.00</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1023">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1023 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 3 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1045</strong>
+                                </td>
+                                <td>Ana Martínez</td>
+                                <td>6789-0123</td>
+                                <td>
+                                    <time datetime="2025-04-03">2025-04-03</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Batería 12V 60Ah (1)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 85.00</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1045">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1045 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 4 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1067</strong>
+                                </td>
+                                <td>Luis Hernández</td>
+                                <td>6345-7890</td>
+                                <td>
+                                    <time datetime="2025-04-05">2025-04-05</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Amortiguador delantero (2)</li>
+                                        <li>Filtro de aire (1)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 125.50</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1067">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1067 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 5 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1089</strong>
+                                </td>
+                                <td>Carmen Díaz</td>
+                                <td>6456-1234</td>
+                                <td>
+                                    <time datetime="2025-04-07">2025-04-07</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Correa de distribución (1)</li>
+                                        <li>Bomba de agua (1)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 145.00</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1089">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1089 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 6 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1102</strong>
+                                </td>
+                                <td>Roberto Silva</td>
+                                <td>6567-8901</td>
+                                <td>
+                                    <time datetime="2025-04-08">2025-04-08</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Disco de freno (2)</li>
+                                        <li>Líquido de frenos DOT4 (1)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 98.75</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1102">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1102 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                            <!-- Pedido 7 -->
+                            <tr>
+                                <td>
+                                    <strong>P-1115</strong>
+                                </td>
+                                <td>Patricia Morales</td>
+                                <td>6678-2345</td>
+                                <td>
+                                    <time datetime="2025-04-10">2025-04-10</time>
+                                </td>
+                                <td>
+                                    <ul class="products-list">
+                                        <li>Radiador (1)</li>
+                                        <li>Refrigerante (2)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>B/. 156.30</strong>
+                                </td>
+                                <td>
+                                    <form action="/admin/pedidos/marcar-entregado" method="POST" class="inline-form">
+                                        <input type="hidden" name="pedido_id" value="P-1115">
+                                        <input type="hidden" name="csrf_token" value="abc123">
+                                        <button 
+                                            type="submit" 
+                                            class="btn-deliver"
+                                            onclick="return confirm('¿Confirmar que el pedido P-1115 ha sido entregado?')"
+                                        >
+                                            Marcar como entregado
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

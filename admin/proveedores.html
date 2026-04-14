@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores - Panel de Administración</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar de Navegación -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar de Johny Gutierrez">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span class="icon-placeholder">logout-icon</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Header del Módulo -->
+            <header class="module-header">
+                <h1>Proveedores</h1>
+                
+                <div class="header-actions">
+                    <button type="button" aria-label="Notificaciones">
+                        <span class="icon-placeholder">notifications-icon</span>
+                    </button>
+                    <button type="button" aria-label="Configuración">
+                        <span class="icon-placeholder">settings-icon</span>
+                    </button>
+                    <button type="button" aria-label="Cambiar tema">
+                        <span class="icon-placeholder">theme-toggle-icon</span>
+                    </button>
+                    
+                    <form class="search-bar" role="search">
+                        <label for="search-supplier" class="visually-hidden">Buscar proveedor</label>
+                        <input type="search" id="search-supplier" placeholder="Buscar por nombre o teléfono">
+                    </form>
+
+                    <a href="#nuevo-proveedor" class="btn-primary">
+                        + Nuevo Proveedor
+                    </a>
+                </div>
+            </header>
+
+            <!-- Tabla de Proveedores -->
+            <section aria-labelledby="suppliers-list-title">
+                <h2 id="suppliers-list-title" class="visually-hidden">Lista de proveedores</h2>
+                
+                <div class="table-container">
+                    <table class="suppliers-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Productos que suministra</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Entrega</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Fila 1 -->
+                            <tr>
+                                <td>
+                                    <strong>Frenos del Norte</strong><br>
+                                    <small>Carlos Méndez</small>
+                                </td>
+                                <td>
+                                    <address>
+                                        <a href="tel:50522221111">505 2222-1111</a><br>
+                                        <a href="tel:50588881111">505 8888-1111</a>
+                                    </address>
+                                </td>
+                                <td>Frenos, Pastillas</td>
+                                <td><a href="mailto:elcorreo@gmail.com">elcorreo@gmail.com</a></td>
+                                <td>Entrega 48hrs</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <!-- Botón que abriría el panel de edición -->
+                                        <a href="#editar-proveedor-panel" class="btn-icon" title="Editar">
+                                            <span class="icon-placeholder">edit-icon</span> Editar
+                                        </a>
+                                        <button type="button" class="btn-icon btn-danger" title="Eliminar">
+                                            <span class="icon-placeholder">delete-icon</span> Eliminar
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Fila 2 -->
+                            <tr>
+                                <td>
+                                    <strong>Frenos del Norte</strong><br>
+                                    <small>Carlos Méndez</small>
+                                </td>
+                                <td>
+                                    <address>
+                                        <a href="tel:50522221111">505 2222-1111</a><br>
+                                        <a href="tel:50588881111">505 8888-1111</a>
+                                    </address>
+                                </td>
+                                <td>Frenos, Pastillas</td>
+                                <td><a href="mailto:elcorreo@gmail.com">elcorreo@gmail.com</a></td>
+                                <td>Entrega 48hrs</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="#editar-proveedor-panel" class="btn-icon" title="Editar">
+                                            <span class="icon-placeholder">edit-icon</span> Editar
+                                        </a>
+                                        <button type="button" class="btn-icon btn-danger" title="Eliminar">
+                                            <span class="icon-placeholder">delete-icon</span> Eliminar
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Repetir filas según el diseño... -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Panel Lateral de Edición (Simulación de Modal/Drawer) -->
+            <!-- Se muestra aquí para representar el estado de la imagen derecha -->
+            <aside class="edit-panel" id="editar-proveedor-panel" aria-labelledby="edit-panel-title">
+                <header class="panel-header">
+                    <h2 id="edit-panel-title">Editar Proveedor</h2>
+                    <button type="button" class="btn-close" aria-label="Cerrar panel">
+                        <span class="icon-placeholder">close-icon</span>
+                    </button>
+                </header>
+
+                <form action="/admin/proveedores/actualizar" method="POST" class="supplier-form">
+                    
+                    <div class="form-group">
+                        <label for="empresa-nombre">Nombre de la Empresa <abbr title="Requerido">*</abbr></label>
+                        <input type="text" id="empresa-nombre" name="empresa" value="Frenos del Norte" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono <abbr title="Requerido">*</abbr></label>
+                        <input type="tel" id="telefono" name="telefono" value="505 2222-1111" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contacto">Contacto (persona)</label>
+                        <input type="text" id="contacto" name="contacto" value="Carlos Méndez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productos">Productos que suministra</label>
+                        <textarea id="productos" name="productos" rows="2">Frenos, Pastillas</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" value="505 8888-1111">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" value="ventas@frenosnorte.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notas">Notas</label>
+                        <textarea id="notas" name="notas" rows="3">Entrega 48h</textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Cancelar</button>
+                        <button type="submit" class="btn-primary">
+                            <span class="icon-placeholder">save-icon</span> Guardar
+                        </button>
+                    </div>
+                </form>
+            </aside>
+
+        </main>
+    </div>
+
+</body>
+</html>

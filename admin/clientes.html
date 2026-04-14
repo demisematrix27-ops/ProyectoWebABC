@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Panel de Administración</title>
+</head>
+<body>
+
+    <div class="admin-layout">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Menú de administración">
+            <div class="sidebar-header">
+                <figure>
+                    <img src="placeholder-avatar.jpg" alt="Avatar de Johny Gutierrez">
+                </figure>
+                <div class="user-info">
+                    <h2>Johny Gutierrez</h2>
+                    <p>Administrador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="admin.html" aria-current="page">
+                            <span aria-hidden="true">dashboard-icon</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionProducto.html">
+                            <span aria-hidden="true">productmanager-icon</span>
+                            Gestión de Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestionInventario.html">
+                            <span aria-hidden="true">inventory-icon</span>
+                            Gestión de Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registroVentas.html">
+                            <span aria-hidden="true">ventas-icon</span>
+                            Registro de Ventas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html">
+                            <span aria-hidden="true">customers-icon</span>
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="proveedores.html">
+                            <span aria-hidden="true">proveedores-icon</span>
+                            Proveedores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reportes.html">
+                            <span aria-hidden="true">reportes-icon</span>
+                            Reportes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../public/account/sesion.html">
+                    <span class="icon-placeholder">logout-icon</span>
+                    Cerrar sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            
+            <!-- Header -->
+            <header class="module-header">
+                <h1>Clientes</h1>
+                
+                <div class="header-actions">
+                    <button type="button" aria-label="Notificaciones">
+                        <span class="icon-placeholder">notifications-icon</span>
+                    </button>
+                    <button type="button" aria-label="Configuración">
+                        <span class="icon-placeholder">settings-icon</span>
+                    </button>
+                    <button type="button" aria-label="Cambiar tema">
+                        <span class="icon-placeholder">theme-toggle-icon</span>
+                    </button>
+                    
+                    <form class="search-bar" role="search">
+                        <label for="search-clients" class="visually-hidden">Buscar por nombre o teléfono</label>
+                        <input type="search" id="search-clients" placeholder="Buscar por nombre o teléfono">
+                    </form>
+
+                    <a href="#nuevo-cliente" class="btn-primary">
+                        + Nuevo Cliente
+                    </a>
+                </div>
+            </header>
+
+            <!-- Estadísticas -->
+            <section class="stats-cards" aria-label="Estadísticas de clientes">
+                <article class="stat-card">
+                    <h2>Total Clientes</h2>
+                    <p class="stat-value">7</p>
+                    <span class="stat-label">Registrados</span>
+                </article>
+                <article class="stat-card">
+                    <h2>Pendientes en retirar</h2>
+                    <p class="stat-value">7</p>
+                    <span class="stat-label">Lista para entregar</span>
+                </article>
+            </section>
+
+            <!-- Tabs de Navegación -->
+            <nav class="tabs-nav" aria-label="Vistas de clientes">
+                <a href="#todos-clientes" class="tab active" aria-current="page">Todos los Clientes</a>
+                <a href="pedidoRetiro.html" class="tab">Pedidos para retiro</a>
+            </nav>
+
+            <!-- Sección: Todos los Clientes -->
+            <section id="todos-clientes" aria-labelledby="clientes-title">
+                <h2 id="clientes-title" class="visually-hidden">Lista de todos los clientes</h2>
+                
+                <table class="clients-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Fecha de registro</th>
+                            <th scope="col">Total pedidos</th>
+                            <th scope="col">Último pedido</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Cliente 1 -->
+                        <tr>
+                            <td>María González</td>
+                            <td>6678-1234</td>
+                            <td>
+                                <a href="mailto:maria.g@email.com">maria.g@email.com</a>
+                            </td>
+                            <td>
+                                <time datetime="2025-01-10">2025-01-10</time>
+                            </td>
+                            <td>2</td>
+                            <td>
+                                <time datetime="2025-04-01">2025-04-01</time>
+                            </td>
+                            <td>
+                                <!-- Opción 1: Usando details/summary para mostrar historial inline -->
+                                <details class="client-history">
+                                    <summary>
+                                        <span class="icon-placeholder">view-icon</span> Ver
+                                    </summary>
+                                    <!-- Historial de pedidos del cliente (se expande sin JS) -->
+                                    <div class="history-content">
+                                        <h3>Historial de Pedidos - María González</h3>
+                                        <table class="orders-table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">N° Pedido</th>
+                                                    <th scope="col">Productos</th>
+                                                    <th scope="col">Total</th>
+                                                    <th scope="col">Estado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>P-1001</td>
+                                                    <td>Filtro Aceite (1), Bujía NGK (4)</td>
+                                                    <td>B/. 45.50</td>
+                                                    <td>Entregado</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>P-1023</td>
+                                                    <td>Pastillas de freno (1)</td>
+                                                    <td>B/. 35.00</td>
+                                                    <td>Pendiente</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </details>
+                            </td>
+                        </tr>
+
+                        <!-- Cliente 2 -->
+                        <tr>
+                            <td>Carlos Rodríguez</td>
+                            <td>6234-5678</td>
+                            <td>
+                                <a href="mailto:carlos.r@email.com">carlos.r@email.com</a>
+                            </td>
+                            <td>
+                                <time datetime="2025-02-15">2025-02-15</time>
+                            </td>
+                            <td>5</td>
+                            <td>
+                                <time datetime="2025-04-10">2025-04-10</time>
+                            </td>
+                            <td>
+                                <details class="client-history">
+                                    <summary>
+                                        <span class="icon-placeholder">view-icon</span> Ver
+                                    </summary>
+                                    <div class="history-content">
+                                        <h3>Historial de Pedidos - Carlos Rodríguez</h3>
+                                        <table class="orders-table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">N° Pedido</th>
+                                                    <th scope="col">Productos</th>
+                                                    <th scope="col">Total</th>
+                                                    <th scope="col">Estado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>P-1045</td>
+                                                    <td>Aceite Motor 5W30 (2)</td>
+                                                    <td>B/. 28.00</td>
+                                                    <td>Entregado</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </details>
+                            </td>
+                        </tr>
+
+                        <!-- Cliente 3 -->
+                        <tr>
+                            <td>Ana Martínez</td>
+                            <td>6789-0123</td>
+                            <td>
+                                <a href="mailto:ana.m@email.com">ana.m@email.com</a>
+                            </td>
+                            <td>
+                                <time datetime="2025-03-20">2025-03-20</time>
+                            </td>
+                            <td>1</td>
+                            <td>
+                                <time datetime="2025-04-05">2025-04-05</time>
+                            </td>
+                            <td>
+                                <details class="client-history">
+                                    <summary>
+                                        <span class="icon-placeholder">view-icon</span> Ver
+                                    </summary>
+                                    <div class="history-content">
+                                        <h3>Historial de Pedidos - Ana Martínez</h3>
+                                        <table class="orders-table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">N° Pedido</th>
+                                                    <th scope="col">Productos</th>
+                                                    <th scope="col">Total</th>
+                                                    <th scope="col">Estado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>P-1067</td>
+                                                    <td>Batería 12V (1)</td>
+                                                    <td>B/. 85.00</td>
+                                                    <td>En proceso</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </details>
+                            </td>
+                        </tr>
+
+                        <!-- Repetir para más clientes... -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección: Pedidos para Retiro (alternativa con ancla) -->
+            <section id="pedidos-retiro" aria-labelledby="pedidos-title" hidden>
+                <h2 id="pedidos-title">Pedidos para Retiro</h2>
+                <p>Esta sección mostraría solo los pedidos pendientes de retiro.</p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

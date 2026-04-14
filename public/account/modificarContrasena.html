@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - AutoServicio ABC #2</title>
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+
+            <nav aria-label="Menú principal">
+                <ul>
+                    <li><a href="../../Index.html">Inicio</a></li>
+                    <li><a href="../servicios.html">Servicios</a></li>
+                    <li><a href="../catalogo.html">Catálogos</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <form role="search" action="/buscar" method="get">
+                    <label for="busqueda" class="visually-hidden">Buscar repuestos</label>
+                    <input type="search" id="busqueda" name="q" placeholder="Encuentra tu repuesto perfecto">
+                    <button type="submit">search-icon</button>
+                </form>
+            </div>
+
+            <div class="header-contact-icons">
+                <div class="contact-info">
+                    <p>Teléfono<br>6344-8292</p>
+                    <p>Whats app<br>6549-7470</p>
+                </div>
+                <div class="user-actions">
+                    <a href="../shop.html" aria-label="Carrito de compras">shop-icon</a>
+                    <a href="miCuenta.html" aria-label="Perfil de usuario">account-icon</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <div class="dashboard-layout">
+            
+            <!-- Barra Lateral Izquierda (Menú de Cuenta) -->
+            <aside class="sidebar-left">
+                <nav aria-label="Menú de cuenta de usuario">
+                    <ul>
+                        <li><a href="historialPedidos.html">Historial de pedidos</a></li>
+                        <li><a href="pedidosRecientes.html">Historial de compras</a></li>
+                        <li><a href="modificarInformacion.html">Modificar información</a></li>
+                        <li><a href="modificarContrasena.html">Cambiar contraseña</a></li>
+                        <li><a href="listaDeseos.html">Lista de deseos</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Área de Contenido Central (Dinámico) -->
+            <!-- Contenido Central - Cambiar Contraseña -->
+            <section class="account-content" aria-labelledby="change-password-title">
+                <h2 id="change-password-title">Cambiar contraseña</h2>
+
+                <form action="/mi-cuenta/actualizar-password" method="POST" class="password-form">
+                    
+                    <!-- Contraseña Actual -->
+                    <div class="form-group">
+                        <label for="current-password">Contraseña actual</label>
+                        <input 
+                            type="password" 
+                            id="current-password" 
+                            name="current_password" 
+                            autocomplete="current-password" 
+                            required
+                        >
+                    </div>
+
+                    <!-- Nueva Contraseña -->
+                    <div class="form-group">
+                        <label for="new-password">Nueva contraseña</label>
+                        <input 
+                            type="password" 
+                            id="new-password" 
+                            name="new_password" 
+                            autocomplete="new-password" 
+                            required 
+                            minlength="8"
+                            aria-describedby="password-hint"
+                        >
+                        <small id="password-hint" class="form-hint">Mínimo 8 caracteres.</small>
+                    </div>
+
+                    <!-- Confirmar Contraseña -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar nueva contraseña</label>
+                        <input 
+                            type="password" 
+                            id="confirm-password" 
+                            name="confirm_password" 
+                            autocomplete="new-password" 
+                            required 
+                            minlength="8"
+                        >
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Guardar cambios</button>
+                    </div>
+                    
+                </form>
+
+                <!-- Enlace por si olvidan la contraseña actual -->
+                <footer class="form-footer">
+                    <p>
+                        <a href="/recuperar-contrasena">¿Olvidaste tu contraseña actual?</a>
+                    </p>
+                </footer>
+
+            </section>
+
+            <!-- Barra Lateral Derecha (Widget/Novedades) -->
+            <aside class="sidebar-right">
+                <div class="product-widget">
+                    <h2>Algun producto en novedad</h2>
+                    <!-- Espacio para imagen o detalle del producto -->
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-columns">
+            
+            <!-- Columna Información -->
+            <section>
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="../sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="../informacionPagos.html">Información de Pagos</a></li>
+                    <li><a href="../informacionEntrega.html">Información de Entrega</a></li>
+                    <li><a href="../devolucionGarantia.html">Devoluciones, Reclamos y Garantías</a></li>
+                </ul>
+            </section>
+
+            <!-- Columna Mi Cuenta -->
+            <section>
+                <h3>Mi Cuenta</h3>
+                <ul>
+                    <li><a href="miCuenta.html">Cuenta</a></li>
+                    <li><a href="historialPedidos.html">Historial de pedidos</a></li>
+                    <li><a href="listaDeseos.html">Lista de Deseos</a></li>
+                </ul>
+            </section>
+
+            <!-- Columna Información del Local -->
+            <section>
+                <h3>Información Del Local</h3>
+                <address>
+                    La Chorrera, El Coco , Al<br>
+                    Frente del Super99<br>
+                    <a href="tel:65497470">6549-7470</a> / <a href="tel:63448292">6344-8292</a>
+                </address>
+                <figure>
+                    <img src="mapa-placeholder.jpg" alt="Mapa de ubicación del local" width="150">
+                    <figcaption>Map</figcaption>
+                </figure>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 AutoServicio ABC #2</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/autoserviciosabc_2/" aria-label="Instagram">Instagram-icon</a>
+                <a href="https://www.threads.com/@autoserviciosabc_2" aria-label="Threads">Threads-icon</a>
+                <a href="https://wa.me/50765497470" aria-label="WhatsApp">whatsapp-icon</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
